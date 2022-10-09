@@ -12,14 +12,16 @@ def primes(number_of_primes):
 
 
 def isPrime(n):
-    if (n == 2 or n == 3):
+    if (n == 2 or n == 3 or n == 5):
         return True
 
-    if (n % 2 == 0 or n % 3 == 0):
+    if (n % 2 == 0 or n % 3 == 0 or n % 5 == 0):
         return False
     
-    for i in range(5, i*i<n, 6):
-        if (n % i == 0 or n % (i + 2) == 0):
+    i = 5
+    while (i*i<n):
+        if ((n % i == 0) or (n % (i + 2) == 0)):
             return False
+        i+=6
 
     return True
